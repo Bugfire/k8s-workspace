@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: workspace
+  labels:
+    app: k8s-workspace
+spec:
+  containers:
+  - name: workspace
+    image: node:lts-stretch
+    command: [ "/bin/bash", "-c", "while true; do sleep 1; done" ]
+    resources:
+      requests:
+        cpu: 1000m
+        memory: 1000Mi
+    envFrom:
+    - configMapRef:
+        name: common-env

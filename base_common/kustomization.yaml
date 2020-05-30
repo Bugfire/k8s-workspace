@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# ベースファイル
+#   Volume 定義の LocalPath 版・NFS 版はここから派生する
+
+# ビルド対象ファイル
+resources:
+- workspace.yaml
+
+# ConfigMap 自動生成
+configMapGenerator:
+- name: common-env
+  env: common.env
+
+# 他便利設定
+#   namespace, namePrefix, commonLabels, commonAnnotations 
+#   secretGenerator, crds, vars

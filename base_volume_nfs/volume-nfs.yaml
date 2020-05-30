@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-volume
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  storageClassName: nfs
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: CHANGE_ME
+    path: /CHANGE_ME
