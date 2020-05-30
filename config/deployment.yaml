@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: k8s-workspace
+spec:
+  template:
+    metadata:
+      labels:
+        app: k8s-workspace
+    spec:
+      containers:
+      - name: deployment
+        volumeMounts:
+          - name: volume-data
+            mountPath: /usr/src/app
+      volumes:
+        - name: volume-data
+          persistentVolumeClaim:
+            claimName: local-volume-claim

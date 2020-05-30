@@ -7,6 +7,7 @@ kind: Kustomization
 # ビルド対象ファイル
 resources:
 - workspace.yaml
+- deployment.yaml
 
 # ConfigMap 自動生成
 configMapGenerator:

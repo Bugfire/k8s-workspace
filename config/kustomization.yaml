@@ -14,6 +14,7 @@ bases:
 # パッチファイル
 patches:
 - workspace.yaml
+- deployment.yaml
 # Volume - NFS の場合
 - volume-nfs.yaml
 # Volume - LocalPath の場合
