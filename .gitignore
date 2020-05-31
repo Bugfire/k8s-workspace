@@ -1,3 +1,4 @@
-config/volume-localpath.yaml
-config/volume-nfs.yaml
+kustomize/config/volume-localpath.yaml
+ksutomize/config/volume-nfs.yaml
+helm/config.yaml
 work

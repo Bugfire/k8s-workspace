@@ -1,0 +1,12 @@
+volume_localpath:
+  enabled: true
+  path: /CHANGE_ME
+
+volume_nfs:
+  enabled: false
+  server: CHANGE_ME
+  path: /CHANGE_ME
+
+env:
+  a: TEST_A
+  b: TEST_B

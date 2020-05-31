@@ -1,0 +1,16 @@
+{{- if .Values.volume_nfs.enabled -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-volume
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  storageClassName: nfs
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: {{ .Values.volume_nfs.server }}
+    path: {{ .Values.volume_nfs.path | default "/" }}
+{{- end }}
